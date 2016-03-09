@@ -1,0 +1,33 @@
+table {
+  border-right:1px solid #ccc; 
+  border-bottom:1px solid #ccc; 
+  text-align: center; 
+  margin: 0 auto;
+}
+
+thead {
+  float: left;   
+}
+
+thead th {
+  display: block;   
+  background: #eee;
+  padding:5px; 
+  border-left:1px solid #ccc; 
+  border-top:1px solid #ccc;
+}
+
+tbody {
+  float: right;   
+}
+
+tbody td {
+  display: block;
+  padding:5px; 
+  border-left:1px solid #ccc; 
+  border-top:1px solid #ccc;   
+}
+
+body {
+	font-family: 'Roboto', sans-serif;
+}
