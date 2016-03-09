@@ -25,10 +25,9 @@
 <br />
 <div class="container">
 
-
 <div id="readings" style="margin: 0 auto;">
 <?php
-    include 'includes/db.php';
+    include '../db.php';
     // Check connection
     if (mysqli_connect_errno())
       {
