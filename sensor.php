@@ -18,5 +18,4 @@ if ($_GET["temp"] || $_GET["co2"] || $_GET["rh"] || $_GET["lux"] || $_GET["etemp
 }
 else 
 	echo "\nFailed";
-	
 ?>
