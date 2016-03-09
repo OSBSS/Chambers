@@ -1,21 +1,31 @@
 <?php
-//This file stores the data sent from the CC3000 in the local database.
+//Sensors.php -  Retrieves data sent from the CC3000 and stores in the local database.
 
 include 'includes/db.php'; // connecting to database
 include 'includes/config.php'; // settings some configurations 
 
-// Store data
-if ($_GET["temp"] || $_GET["co2"] || $_GET["rh"] || $_GET["lux"] || $_GET["etemp"]) {
+/* 	NOTE: Store data according to chamber number in src query string
+* 	If src = chamber1, data will store in chamber1 table, and so on. 
+*/
+ 
+if ($_GET["temp"] || $_GET["co2"] || $_GET["rh"] || $_GET["lux"] || $_GET["stemp"]) || $_GET["src"] {
+// Get values from URL and store into its own variable
     $temp = $_GET["temp"];
     $co2  = $_GET["co2"];
     $rh  = $_GET["rh"];
     $lux  = $_GET["lux"];
-    $etemp  = $_GET["etemp"];
-	$sql = "insert into lab_temp (timestamp, temp, co2, rh, lux, etemp) values (now(), $temp, $co2, $rh, $lux, $etemp)";
+    $stemp  = $_GET["stemp"];
+    $src = $_GET["src"];
+    
+// SQL command to insert into database
+	$sql = "insert into $src (timestamp, temp, rh, lux, stemp, co2) values (now(), $temp, $rh, $lux, $stemp, $co2)";
 	mysql_query($sql);
-	echo "Success";
-//echo now();
+
+// TO-DO: Need to figure a way out to send acknowledgement back to sender. 
+echo "Success"; 
 }
 else 
 	echo "\nFailed";
+	
+//echo now(); // Testing timestamp format - debugging only
 ?>
