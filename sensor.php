@@ -18,8 +18,8 @@ if ($_GET["temp"] || $_GET["co2"] || $_GET["rh"] || $_GET["lux"] || $_GET["stemp
     $src = $_GET["src"];
     
 // SQL command to insert into database
-	$sql = "insert into $src (timestamp, temp, rh, lux, stemp, co2) values (now(), $temp, $rh, $lux, $stemp, $co2)";
-	mysql_query($sql);
+$sql = "insert into $src (timestamp, temp, rh, lux, stemp, co2) values (now(), $temp, $rh, $lux, $stemp, $co2)";
+mysql_query($sql);
 
 // TO-DO: Need to figure a way out to send acknowledgement back to sender. 
 echo "Success"; 
