@@ -18,7 +18,7 @@
 
 		echo '<table cellpadding="0" cellspacing="0" class="db-table">';
 		echo '<thead><tr><th>Data Point #</th><th>Time</th><th>Temperature</th><th>CO<sub>2</sub></th><th>Relative Humidity</th><th>Light Intensity</th><th>Surface Temperature</th></tr></thead>';
-		echo '<tfoot><tr><div style="text-align: center"><a href="export.php?table=chamber'.$x.'">Export</a></div></tr></tfoot>';
+		echo '<tfoot><tr><td><div style="text-align: center"><a href="export.php?table=chamber'.$x.'">Export</a></div></td></tr></tfoot>';
 		// SQL query to get all data 
 		$sql = "SELECT * FROM chamber$x ORDER BY id DESC LIMIT 1";
 		// echo $sql; Debug test to see if query is correct
