@@ -16,21 +16,13 @@
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
 <script type="text/javascript" src="js/script.js"></script>
 </head>
-
-<body>
-<h2 style="text-align:center">Chambers Sensor Readings</h2>
-<p style="text-align:center; color: red;"><a href="index.php?action=truncate">Clear Database</a></p>
-<p style="clear:both;"></p>
-<br />
-
-<div class="container">
-<div id="readings" style="margin: 0 auto;">
-<div class="row">
 <?php
-    include 'includes/db.php'; // Connect to DB
-    include 'includes/config.php';  // Import required configurations
-    include 'data.php'; // Data generates from this file
-   
+include 'includes/db.php'; // Connect to DB
+include 'includes/config.php';  // Import required configurations
+?>
+<body>
+<div id="data"></div>
+<?php
 	// Truncate tables action
 	if(isset($_GET['action'])) {
 	switch($_GET['action']) {
@@ -44,15 +36,12 @@
 			break;
 		}
 	}
- ?>
-</div>
-</div>
-</div>
+?>
 <p style="clear:both;"></p>
 <br />
 <footer style="text-align:center;">Copyright &copy; 2016 OSBSS - BERG Lab</footer>
 <br />
-<!-- This is the the end. Skyfall. -->
 </body>
 
+<!-- This is the the end. Skyfall. -->
 </html>

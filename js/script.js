@@ -2,7 +2,7 @@
 
 // AJAX reload function
 function auto_load() {
-	$('body').load('index.php').fadeIn("slow");
+	$('#data').load('data.php').fadeIn("slow");
 }
 setInterval(auto_load,10000); // refreshing after every 5 seconds
 

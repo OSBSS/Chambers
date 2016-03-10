@@ -1,5 +1,16 @@
+<h2 style="text-align:center">Chambers Sensor Readings</h2>
+<p style="text-align:center; color: red;"><a href="index.php?action=truncate">Clear Database</a></p>
+<p style="clear:both;"></p>
+<br />
+<div class="container">
+<div id="readings" style="margin: 0 auto;">
+<div class="row">
 <?php
-// Start Loop
+    //include 'includes/db.php'; // Connect to DB
+    //include 'includes/config.php';  // Import required configurations
+    //include 'data.php'; // Data generates from this file
+
+    // Start Loop
     for($x = 1; $x <= $chambers; $x++) {   			
 		// Generate a grid to display table and its data
 		echo '<div class="col-md-4">';
@@ -22,3 +33,8 @@
 		echo '</div>';
 	}
 // End Loop
+   
+?>
+</div>
+</div>
+</div>
