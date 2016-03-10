@@ -10,7 +10,7 @@ if ($_GET["table"]) {
 }
 
 // filename for export
-$csv_filename = $table.'_export_'.date('Y-m-d').'.csv';
+$csv_filename = $table.'_export_'.date("Y-m-d_H_i_s").'.csv';
 
 // create empty variable to be filled with export data
 $csv_export = '';
