@@ -34,8 +34,8 @@
 		
 		// Generate a grid to display table and its data
 		echo '<div class="col-md-4">';
-		echo '<h3 style="text-align:left;">Chamber '. $x . '</h3>';
-		echo '<span style="text-align:right;"><a href="export.php?table=chamber'.$x.'">Export</a></span>';
+		echo '<h3 style="text-align:left; float:left;">Chamber '. $x . '</h3>';
+		echo '<p style="text-align:right; float:right;"><a href="export.php?table=chamber'.$x.'">Export</a></p>';
 		echo '<br />';
 		// Table start
 		echo '<table cellpadding="0" cellspacing="0" class="db-table">';
