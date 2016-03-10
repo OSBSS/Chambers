@@ -30,22 +30,25 @@
     include 'includes/config.php';  // Import required configurations
     
     // Start Loop
-    for($x = 1; $x <= $chambers; $x++) {
-    		
+    for($x = 1; $x <= $chambers; $x++) {   		
+		
 		// Generate a grid to display table and its data
 		echo '<div class="col-md-3">';
 		echo '<h3 style="text-align: center">Chamber '. $x . '</h2>';
+		
 		// Table start
 		echo '<table cellpadding="0" cellspacing="0" class="db-table">';
 		echo '<thead><tr><th>Data Point #</th><th>Time</th><th>Temperature</th><th>CO<sub>2</sub></th><th>Relative Humidity</th><th>Light Intensity</th><th>Surface Temperature</th></tr></thead>';
 
 		// SQL query to get all data 
-		$result = mysql_query("SELECT * FROM chambers".$x."ORDER BY id DESC LIMIT 1");
+		$result = mysql_query("SELECT * FROM chambers$x ORDER BY id DESC LIMIT 1");
 		$row = mysql_fetch_row($result);
+        
         // Display data
         echo "<tbody><tr><td>" . $row['id'] . "</td><td> " . $row['timestamp'] . "</td><td> " . $row['temp'] . "&deg;C</td><td> " . $row['co2'] . " ppm</td><td> " . $row['rh'] . "%</td><td> " . $row['lux'] . " lux</td><td> " . $row['stemp'] . "&deg;C</td></tr></tbody>"; 
 		echo '</table>';
 		// Table end
+		
 		echo '<a style="text-align:center;" href="export.php?table=chamber'.$x.'">Export</a>';
 		echo '</div>';
 	}
