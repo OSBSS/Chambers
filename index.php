@@ -18,7 +18,7 @@
 
 <body>
 <h2 style="text-align:center">Chambers Sensor Readings</h2>
-<p style="text-align:center"><a href="index.php?action=truncate">Clear Database</a></p>
+<p style="text-align:center; color: red;"><a href="index.php?action=truncate">Clear Database</a></p>
 <p style="clear:both;"></p>
 <br />
 
@@ -44,7 +44,7 @@
         	echo "<tbody><tr><td>" . $row['id'] . "</td><td> " . $row['timestamp'] . "</td><td> " . $row['temp'] . "&deg;C</td><td> " . $row['co2'] . " ppm</td><td> " . $row['rh'] . "%</td><td> " . $row['lux'] . " lux</td><td> " . $row['stemp'] . "&deg;C</td></tr></tbody>"; 
         }
 		echo '</table>';
-		echo '<a href="export.php?table=chamber'.$x.'">Export</a>';
+		echo '<a style="text-align:center;" href="export.php?table=chamber'.$x.'">Export</a>';
 		echo '</div>';
 	}
 	// End Loop
