@@ -1,36 +1,25 @@
 <?php    
 // OSBSS Copyright 2016
-// Refactor to accomodate all 6 chambers using query strings
+// Export.php - export table data as CSV format
 
-/* vars for export */
+include 'includes/db.php'; // connecting to database
+include 'includes/config.php'; // settings some configurations 
 
-// database record to be exported
-$db_record = 'lab_temp';
-// optional where query
-$where = 'WHERE 1 ORDER BY 1';
+if ($_GET["table"]) {
+    $table = $_GET["table"];
+}
+
 // filename for export
-$csv_filename = 'db_export_'.$db_record.'_'.date('Y-m-d').'.csv';
-/*
-// database variables
-$hostname = "";
-$user = "";
-$password = "";
-$database = "";
-
-// Database 
-mysql_connect($hostname, $user, $password)
-or die('Could not connect: ' . mysql_error());
-					
-mysql_select_db($database)
-or die ('Could not select database ' . mysql_error());
-*/
-include 'includes/db.php';
+$csv_filename = $table.'_export_'.date('Y-m-d').'.csv';
 
 // create empty variable to be filled with export data
 $csv_export = '';
 
+// optional where query
+$where = 'WHERE 1 ORDER BY 1';
+
 // query to get data from database
-$query = mysql_query("SELECT * FROM ".$db_record." ".$where);
+$query = mysql_query("SELECT * FROM ".$table." ".$where);
 $field = mysql_num_fields($query);
 
 // create line with field names
@@ -47,12 +36,12 @@ while($row = mysql_fetch_array($query)) {
   for($i = 0; $i < $field; $i++) {
     $csv_export.= ''.$row[mysql_field_name($query,$i)].',';
   }	
-  $csv_export.= '';	
+  $csv_export.= '
+  ';	
 }
 
 // Export the data and prompt a csv file for download
 header("Content-type: text/x-csv");
 header("Content-Disposition: attachment; filename=".$csv_filename."");
 echo($csv_export);
-//echo "<script>window.close();</script>";
 ?>
