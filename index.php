@@ -16,11 +16,11 @@
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
 <script type="text/javascript" src="js/script.js"></script>
 </head>
+<body>
 <?php
 include 'includes/db.php'; // Connect to DB
 include 'includes/config.php';  // Import required configurations
 ?>
-<body>
 <div id="data"></div>
 <?php
 	// Truncate tables action
