@@ -29,9 +29,10 @@
 <?php
     include 'includes/db.php'; // Connect to DB
     include 'includes/config.php';  // Import required configurations
-
-    include 'data.php'; // Data generates from this file
-    
+    //include 'data.php'; // Data generates from this file
+?>
+<div id="data"></div>
+<?php    
 	// Truncate tables action
 	if(isset($_GET['action'])) {
 	switch($_GET['action']) {
