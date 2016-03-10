@@ -9,7 +9,7 @@ include 'includes/config.php'; // settings some configurations
 * 	If src = chamber1, data will store in chamber1 table, and so on. 
 */
  
-if ($_GET["temp"] || $_GET["co2"] || $_GET["rh"] || $_GET["lux"] || $_GET["stemp"]) || $_GET["src"] {
+if ($_GET["temp"] || $_GET["co2"] || $_GET["rh"] || $_GET["lux"] || $_GET["stemp"] || $_GET["src"]) {
 // Get values from URL and store into its own variable
     $temp = $_GET["temp"];
     $co2  = $_GET["co2"];
