@@ -6,8 +6,8 @@
 <div id="readings" style="margin: 0 auto;">
 <div class="row">
 <?php
-    //include 'includes/db.php'; // Connect to DB
-    //include 'includes/config.php';  // Import required configurations
+    include 'includes/db.php'; // Connect to DB
+    include 'includes/config.php';  // Import required configurations
     //include 'data.php'; // Data generates from this file
 
     // Start Loop

@@ -18,8 +18,8 @@
 </head>
 <body>
 <?php
-include 'includes/db.php'; // Connect to DB
-include 'includes/config.php';  // Import required configurations
+//include 'includes/db.php'; // Connect to DB
+//include 'includes/config.php';  // Import required configurations
 ?>
 <div id="data"></div>
 <?php
