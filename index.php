@@ -25,13 +25,8 @@
 <div class="container">
 <div id="readings" style="margin: 0 auto;">
 <?php
-    include 'includes/db.php';
-    // Check connection
-    if (mysqli_connect_errno())
-      {
-      echo "Failed to connect to MySQL: " . mysqli_connect_error();
-      }
-    
+    include 'includes/db.php'; // Include and connect to DB
+        
     $chambers = 6; // Setting to specify total number of chambers. This MUST be exact as in the database otherwise ERRRRROR.
     
     // Start Loop
@@ -47,7 +42,7 @@
         }
 		echo "</table>";
 		
-		echo '<a href="export.php?table=chamber$x">Export</a>';
+		echo '<a href="export.php?table=chamber'.$x.'">Export</a>';
 	}
 	// End Loop
 	
