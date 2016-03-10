@@ -19,6 +19,7 @@
 
 <body>
 <div id="data"></div>
+<!--
 <?php
 	// Truncate tables action
 	if(isset($_GET['action'])) {
@@ -34,6 +35,7 @@
 		}
 	}
 ?>
+-->
 <p style="clear:both;"></p>
 <br />
 <footer style="text-align:center;">Copyright &copy; 2016 OSBSS - BERG Lab</footer>

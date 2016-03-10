@@ -1,5 +1,5 @@
 <h2 style="text-align:center">Chambers Sensor Readings</h2>
-<p style="text-align:center; color: red;"><a href="index.php?action=truncate">Clear Database</a></p>
+<!--p style="text-align:center; color: red;"><a href="index.php?action=truncate">Clear Database</a></p-->
 <p style="clear:both;"></p>
 <br />
 <div class="container">
