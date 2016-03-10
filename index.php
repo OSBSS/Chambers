@@ -16,11 +16,8 @@
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
 <script type="text/javascript" src="js/script.js"></script>
 </head>
+
 <body>
-<?php
-//include 'includes/db.php'; // Connect to DB
-//include 'includes/config.php';  // Import required configurations
-?>
 <div id="data"></div>
 <?php
 	// Truncate tables action
@@ -31,8 +28,8 @@
 				mysql_query("TRUNCATE TABLE chambers".$x.";");
 				mysql_query("ALTER TABLE chambers".$x." AUTO_INCREMENT = 1");
 				//echo "Data Cleared";
-				header("Location: " . $_SERVER['REQUEST_URI']);
 			}
+			header("Location: " . $_SERVER['REQUEST_URI']);
 			break;
 		}
 	}

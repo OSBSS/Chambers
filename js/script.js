@@ -11,18 +11,3 @@ $(document).ready(function(){
 });
 
 /*************************************************************/
-
-// Truncate confirmation pop-up
-var deleteLinks = document.querySelectorAll('.truncate');
-
-for (var i = 0; i < deleteLinks.length; i++) {
-  deleteLinks[i].addEventListener('click', function(event) {
-    event.preventDefault();
-
-    var choice = confirm(this.getAttribute('data-confirm'));
-
-    if (choice) {
-      window.location.href = this.getAttribute('href');
-    }
-  });
-}
