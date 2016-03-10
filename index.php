@@ -34,8 +34,7 @@
 		
 		// Generate a grid to display table and its data
 		echo '<div class="col-md-4">';
-		echo '<h3 style="text-align:left; float:left;">Chamber '. $x . '</h3>';
-		echo '<p style="text-align:right; float:right;"><a href="export.php?table=chamber'.$x.'">Export</a></p>';
+		echo '<h3 style="text-align:center">Chamber '. $x . '</h3>';
 		echo '<br />';
 		// Table start
 		echo '<table cellpadding="0" cellspacing="0" class="db-table">';
@@ -46,12 +45,11 @@
 		// echo $sql; Debug test to see if query is correct
 		$result = mysql_query($sql) or die(mysql_error());
 		$row = mysql_fetch_array($result);
-        
         // Display data
         echo "<tbody><tr><td>" . $row['id'] . "</td><td> " . $row['timestamp'] . "</td><td> " . $row['temp'] . "&deg;C</td><td> " . $row['co2'] . " ppm</td><td> " . $row['rh'] . "%</td><td> " . $row['lux'] . " lux</td><td> " . $row['stemp'] . "&deg;C</td></tr></tbody>"; 
 		echo '</table>';
 		// Table end
-		
+		echo '<div style="text-align: center"><a href="export.php?table=chamber'.$x.'">Export</a></div>';
 		echo '</div>';
 	}
 	// End Loop
