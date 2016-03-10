@@ -34,8 +34,8 @@
 		
 		// Generate a grid to display table and its data
 		echo '<div class="col-md-4">';
-		echo '<h3 style="text-align: center">Chamber '. $x . '</h2>';
-		
+		echo '<h3 style="float: left;">Chamber '. $x . '</h3>';
+		echo '<span style="float: right;"><a href="export.php?table=chamber'.$x.'">Export</a></span>';
 		// Table start
 		echo '<table cellpadding="0" cellspacing="0" class="db-table">';
 		echo '<thead><tr><th>Data Point #</th><th>Time</th><th>Temperature</th><th>CO<sub>2</sub></th><th>Relative Humidity</th><th>Light Intensity</th><th>Surface Temperature</th></tr></thead>';
@@ -51,7 +51,6 @@
 		echo '</table>';
 		// Table end
 		
-		echo '<a style="text-align:center;" href="export.php?table=chamber'.$x.'">Export</a>';
 		echo '</div>';
 	}
 	// End Loop
