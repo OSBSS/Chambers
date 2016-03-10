@@ -42,7 +42,7 @@
 		//$table = 'chambers' . $x . '';
 		// SQL query to get all data 
 		$sql = "SELECT * FROM chamber$x ORDER BY id DESC LIMIT 1";
-		echo $sql;
+		// echo $sql; Debug test to see if query is correct
 		$result = mysql_query($sql) or die(mysql_error());
 		$row = mysql_fetch_array($result);
         
