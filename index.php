@@ -41,7 +41,7 @@
 		echo '<thead><tr><th>Data Point #</th><th>Time</th><th>Temperature</th><th>CO<sub>2</sub></th><th>Relative Humidity</th><th>Light Intensity</th><th>Surface Temperature</th></tr></thead>';
 		//$table = 'chambers' . $x . '';
 		// SQL query to get all data 
-		$sql = "SELECT * FROM chambers$x ORDER BY id DESC LIMIT 1";
+		$sql = "SELECT * FROM chamber$x ORDER BY id DESC LIMIT 1";
 		echo $sql;
 		$result = mysql_query($sql) or die(mysql_error());
 		$row = mysql_fetch_array($result);
