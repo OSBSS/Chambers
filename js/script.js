@@ -8,5 +8,5 @@ setInterval(auto_load,10000); // refreshing after every 5 seconds
 
 // AJAX reload function
 function auto_load() {
-	$('#data').load('data.php').fadeIn("slow");
+	$('#readings').load(html).fadeIn("slow");
 }
