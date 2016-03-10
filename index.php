@@ -33,7 +33,7 @@
     // Start Loop
     for($x = 1; $x <= $chambers; $x++) {
     	// SQL query to get the latest data point and other info
-    	$result = mysqli_query($con,"SELECT * FROM chambers".$x."ORDER BY id DESC LIMIT 1");
+    	$result = mysqli_query("SELECT * FROM chambers".$x."ORDER BY id DESC LIMIT 1");
 		
 		// Generate a grid to display table and its data
 		echo '<div class="col-md-3">';
@@ -54,8 +54,8 @@
 	switch($_GET['action']) {
 		case 'truncate':
 			for($x = 1; $x <= $chambers; $x++) {
-				mysqli_query($con,"TRUNCATE TABLE chambers".$x.";");
-				mysqli_query($con,"ALTER TABLE chambers".$x." AUTO_INCREMENT = 1");
+				mysqli_query("TRUNCATE TABLE chambers".$x.";");
+				mysqli_query("ALTER TABLE chambers".$x." AUTO_INCREMENT = 1");
 				//echo "Data Cleared";
 				header("Location: " . $_SERVER['REQUEST_URI']);
 			}
