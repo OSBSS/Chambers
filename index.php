@@ -35,7 +35,7 @@
     $chambers = 6; // Setting to specify total number of chambers. This MUST be exact as in the database otherwise ERRRRROR.
     
     // Start Loop
-    for($x = 1, $x <= $chambers; $x++) {
+    for($x = 1; $x <= $chambers; $x++) {
     	$result = mysqli_query($con,"SELECT * FROM chambers".$x."ORDER BY id DESC LIMIT 1");
 		// SQL query to get the latest data point and other info
 		
