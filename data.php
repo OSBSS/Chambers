@@ -1,5 +1,5 @@
 <h2 style="text-align:center">Chambers Sensor Readings</h2>
-<p style="text-align:center; color: red;"><a href="index.php?action=truncate">Clear Database</a></p>
+<p style="text-align:center; color: red;"><a class="truncate" data-confirm="Are you sure to truncate all tables?" href="index.php?action=truncate">Clear Database</a></p>
 <p style="clear:both;"></p>
 <br />
 <div class="container">
@@ -8,8 +8,7 @@
 <?php
     include 'includes/db.php'; // Connect to DB
     include 'includes/config.php';  // Import required configurations
-    //include 'data.php'; // Data generates from this file
-
+    
     // Start Loop
     for($x = 1; $x <= $chambers; $x++) {   			
 		// Generate a grid to display table and its data
@@ -32,8 +31,7 @@
 		echo '<div style="text-align: center"><a href="export.php?table=chamber'.$x.'">Export</a></div>';
 		echo '</div>';
 	}
-// End Loop
-   
+	// End Loop
 ?>
 </div>
 </div>
