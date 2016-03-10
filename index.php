@@ -1,6 +1,7 @@
 <!DOCTYPE HTML>
 <!-- OSBSS Copyright 2016 -->
 <html>
+
 <head>
 <title>Chambers Project</title>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
@@ -28,11 +29,9 @@
 <?php
     include 'includes/db.php'; // Connect to DB
     include 'includes/config.php';  // Import required configurations
-    
-    
+
     include 'data.php'; // Data generates from this file
     
-	
 	// Truncate tables action
 	if(isset($_GET['action'])) {
 	switch($_GET['action']) {
@@ -47,7 +46,6 @@
 		}
 	}
  ?>
-<!-- This is the the end. Skyfall. -->
 </div>
 </div>
 </div>
@@ -55,5 +53,7 @@
 <br />
 <footer style="text-align:center;">Copyright &copy; 2016 OSBSS - BERG Lab</footer>
 <br />
+<!-- This is the the end. Skyfall. -->
 </body>
+
 </html>
