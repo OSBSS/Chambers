@@ -1,66 +1,23 @@
-<?php
-// OSBSS Copyright 2016
-// Data.php - This file collects the data from the osbss database and converts it to JSON format.
-
-include 'includes/db.php';
-
-// get TIMESTAMP
-$timestamp = mysql_query("SELECT timestamp FROM lab_temp");
-$rows0 = array();
-$rows0['name'] = 'Time';
-while($r0 = mysql_fetch_assoc($timestamp)) {
-    $rows0['data'][] = $r0['timestamp'];
-}
-
-// get TEMP
-$temp = mysql_query("SELECT temp FROM lab_temp");
-$rows1 = array();
-$rows1['name'] = 'Temperature';
-while($r1 = mysql_fetch_array($temp)) {
-    $rows1['data'][] = $r1['temp'];
-}
-
-// get CO2
-$co2 = mysql_query("SELECT co2 FROM lab_temp");
-$rows2 = array();
-$rows2['name'] = 'CO2';
-while($r2 = mysql_fetch_assoc($co2)) {
-    $rows2['data'][] = $r2['co2'];
-}
-
-//get RELATIVE HUMIDITY
-$rh = mysql_query("SELECT rh FROM lab_temp");
-$rows3 = array();
-$rows3['name'] = 'Relative Humidity';
-while($r3 = mysql_fetch_assoc($rh)) {
-    $rows3['data'][] = $r3['rh'];
-}
-
-//get LIGHT INTENSITY
-$lux = mysql_query("SELECT lux FROM lab_temp");
-$rows4 = array();
-$rows4['name'] = 'Light Intensity';
-while($r4 = mysql_fetch_assoc($lux)) {
-    $rows4['data'][] = $r4['lux'];
-}
-
-//get EXTERNAL TEMPERATURE
-$etemp = mysql_query("SELECT etemp FROM lab_temp");
-$rows5 = array();
-$rows5['name'] = 'Air Stream Temperature';
-while($r5 = mysql_fetch_assoc($etemp)) {
-    $rows5['data'][] = $r5['etemp'];
-}
-
-$result = array();
-array_push($result,$rows0);
-array_push($result,$rows1);
-array_push($result,$rows2);
-array_push($result,$rows3);
-array_push($result,$rows4);
-array_push($result,$rows5);
-
-print json_encode($result, JSON_NUMERIC_CHECK);
-
-mysql_close($con);
-?>
+// Start Loop
+    for($x = 1; $x <= $chambers; $x++) {   			
+		// Generate a grid to display table and its data
+		echo '<div class="col-md-4">';
+		echo '<h4 style="text-align:center; margin-bottom:-15px;">Chamber '. $x . '</h3>';
+		echo '<br />';
+		// Table start
+		echo '<table cellpadding="0" cellspacing="0" class="db-table">';
+		echo '<thead><tr><th>Data Point #</th><th>Time</th><th>Temperature</th><th>CO<sub>2</sub></th><th>Relative Humidity</th><th>Light Intensity</th><th>Surface Temperature</th></tr></thead>';
+		//$table = 'chambers' . $x . '';
+		// SQL query to get all data 
+		$sql = "SELECT * FROM chamber$x ORDER BY id DESC LIMIT 1";
+		// echo $sql; Debug test to see if query is correct
+		$result = mysql_query($sql) or die(mysql_error());
+		$row = mysql_fetch_array($result);
+        // Display data
+        echo "<tbody><tr><td>" . $row['id'] . "</td><td> " . $row['timestamp'] . "</td><td> " . $row['temp'] . "&deg;C</td><td> " . $row['co2'] . " ppm</td><td> " . $row['rh'] . "%</td><td> " . $row['lux'] . " lux</td><td> " . $row['stemp'] . "&deg;C</td></tr></tbody>"; 
+		echo '</table>';
+		// Table end
+		echo '<div style="text-align: center"><a href="export.php?table=chamber'.$x.'">Export</a></div>';
+		echo '</div>';
+	}
+// End Loop
