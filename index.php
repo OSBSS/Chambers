@@ -30,8 +30,22 @@
     include 'includes/db.php'; // Connect to DB
     include 'includes/config.php';  // Import required configurations
     //include 'data.php'; // Data generates from this file
+    
+    // Start Loop
+    for($x = 1; $x <= $chambers; $x++) {   	
+    	// SQL query to get all data 
+		$sql = "SELECT * FROM chamber$x ORDER BY id DESC LIMIT 1";
+		// echo $sql; Debug test to see if query is correct
+		$result = mysql_query($sql) or die(mysql_error());
+		$row = mysql_fetch_array($result);		
+		// Generate a grid to display table and its data
+?>		
+<div id="data"></div>	
+<?php	
+	}
+// End Loop  
 ?>
-<div id="data"></div>
+
 <?php    
 	// Truncate tables action
 	if(isset($_GET['action'])) {
