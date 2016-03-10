@@ -18,7 +18,7 @@
 
 <body>
 <h2 style="text-align:center">Chambers Sensor Readings</h2>
-<p style="text-align:center"><a href="index.php?action=truncate">Clear All Tables</a>.</p>
+<p style="text-align:center"><a href="index.php?action=truncate">Clear Database</a></p>
 <p style="clear:both;"></p>
 <br />
 
@@ -29,7 +29,7 @@
     include 'includes/db.php'; // Include and connect to DB
         
     $chambers = 6; // Setting to specify total number of chambers. This MUST be exact as in the database otherwise ERRRRROR.
-    $i=0;
+
     // Start Loop
     for($x = 1; $x <= $chambers; $x++) {
     	// SQL query to get the latest data point and other info
@@ -48,23 +48,19 @@
 	}
 	// End Loop
 	
-	// Truncate tables - Will fix later.
-	/*
+	// Truncate tables action
 	if(isset($_GET['action'])) {
 	switch($_GET['action']) {
 		case 'truncate':
-			mysqli_query($con,"TRUNCATE TABLE chambers1;");
-			mysqli_query($con,"ALTER TABLE chambers1 AUTO_INCREMENT = 1");
-			//echo "Data Cleared";
-			header("Location: " . $_SERVER['REQUEST_URI']);
+			for($x = 1; $x <= $chambers; $x++) {
+				mysqli_query($con,"TRUNCATE TABLE chambers".$x.";");
+				mysqli_query($con,"ALTER TABLE chambers".$x." AUTO_INCREMENT = 1");
+				//echo "Data Cleared";
+				header("Location: " . $_SERVER['REQUEST_URI']);
+			}
 			break;
 		}
 	}
-	*/
-	/*
-	run this query to reset auto inc. delete all values first. 
-	ALTER TABLE lab_temp AUTO_INCREMENT = 1
-	*/
  ?>
 </div>
 </div>
