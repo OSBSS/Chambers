@@ -40,7 +40,7 @@
 		echo '<h2 style="text-align: center">Chamber '. $x . '</h2>';
 		echo '<table cellpadding="0" cellspacing="0" class="db-table">';
 		echo '<thead><tr><th>Data Point #</th><th>Time</th><th>Temperature</th><th>CO<sub>2</sub></th><th>Relative Humidity</th><th>Light Intensity</th><th>Surface Temperature</th></tr></thead>';
-		while($row = mysql_fetch_array($result, MYSQL_BOTH)) {
+		while($row = mysql_fetch_row($result)) {
         	echo "<tbody><tr><td>" . $row['id'] . "</td><td> " . $row['timestamp'] . "</td><td> " . $row['temp'] . "&deg;C</td><td> " . $row['co2'] . " ppm</td><td> " . $row['rh'] . "%</td><td> " . $row['lux'] . " lux</td><td> " . $row['stemp'] . "&deg;C</td></tr></tbody>"; 
         }
 		echo '</table>';
