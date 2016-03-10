@@ -39,9 +39,10 @@
 		// Table start
 		echo '<table cellpadding="0" cellspacing="0" class="db-table">';
 		echo '<thead><tr><th>Data Point #</th><th>Time</th><th>Temperature</th><th>CO<sub>2</sub></th><th>Relative Humidity</th><th>Light Intensity</th><th>Surface Temperature</th></tr></thead>';
-
+		$table = "chambers" + $x;
+		echo '$table';
 		// SQL query to get all data 
-		$result = mysql_query("SELECT * FROM chambers$x ORDER BY id DESC LIMIT 1");
+		$result = mysql_query("SELECT * FROM $table ORDER BY id DESC LIMIT 1");
 		$row = mysql_fetch_row($result);
         
         // Display data
