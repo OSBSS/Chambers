@@ -42,8 +42,8 @@
 		$table = 'chambers' . $x . '';
 		// SQL query to get all data 
 		$result = mysql_query("SELECT * FROM '".$table."' ORDER BY id DESC LIMIT 1");
-		echo $result;
-		$row = mysql_fetch_row($result);
+		//echo $result;
+		$row = mysql_fetch_array($result);
         
         // Display data
         echo "<tbody><tr><td>" . $row['id'] . "</td><td> " . $row['timestamp'] . "</td><td> " . $row['temp'] . "&deg;C</td><td> " . $row['co2'] . " ppm</td><td> " . $row['rh'] . "%</td><td> " . $row['lux'] . " lux</td><td> " . $row['stemp'] . "&deg;C</td></tr></tbody>"; 
