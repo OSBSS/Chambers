@@ -1,3 +1,4 @@
+<?php
 // Start Loop
     for($x = 1; $x <= $chambers; $x++) {   			
 		// Generate a grid to display table and its data
@@ -21,3 +22,4 @@
 		echo '</div>';
 	}
 // End Loop
+?>
