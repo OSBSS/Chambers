@@ -43,6 +43,7 @@
 		echo $table;
 		// SQL query to get all data 
 		$result = mysql_query("SELECT * FROM $table ORDER BY id DESC LIMIT 1");
+		echo $result;
 		$row = mysql_fetch_row($result);
         
         // Display data
