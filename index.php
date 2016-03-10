@@ -36,6 +36,7 @@
 		echo '<div class="col-md-4">';
 		echo '<h3 style="float: left;">Chamber '. $x . '</h3>';
 		echo '<span style="float: right;"><a href="export.php?table=chamber'.$x.'">Export</a></span>';
+		echo '<br />';
 		// Table start
 		echo '<table cellpadding="0" cellspacing="0" class="db-table">';
 		echo '<thead><tr><th>Data Point #</th><th>Time</th><th>Temperature</th><th>CO<sub>2</sub></th><th>Relative Humidity</th><th>Light Intensity</th><th>Surface Temperature</th></tr></thead>';
