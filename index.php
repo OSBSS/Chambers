@@ -33,7 +33,7 @@
     for($x = 1; $x <= $chambers; $x++) {   		
 		
 		// Generate a grid to display table and its data
-		echo '<div class="col-md-3">';
+		echo '<div class="col-md-4">';
 		echo '<h3 style="text-align: center">Chamber '. $x . '</h2>';
 		
 		// Table start
