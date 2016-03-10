@@ -1,4 +1,6 @@
 <?php
+// OSBSS Copyright 2016
+
 // Allow display of errors on webpage for debugging
 error_reporting(E_ALL);
 

@@ -1,5 +1,6 @@
 <?php
-//Sensors.php -  Retrieves data sent from the CC3000 and stores in the local database.
+// OSBSS Copyright 2016
+// Sensors.php -  Retrieves data sent from the CC3000 and stores in the local database.
 
 include 'includes/db.php'; // connecting to database
 include 'includes/config.php'; // settings some configurations 

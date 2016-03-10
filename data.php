@@ -1,9 +1,6 @@
 <?php
-/*
-This file collects the data from the osbss database 
-and puts it into specially formatted data arrays that 
-can be read by high charts.
-*/
+// OSBSS Copyright 2016
+// Data.php - This file collects the data from the osbss database and converts it to JSON format.
 
 include 'includes/db.php';
 
