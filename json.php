@@ -1,6 +1,6 @@
 <?php
 // OSBSS Copyright 2016
-// Data.php - This file collects the data from the osbss database and converts it to JSON format.
+// json.php - This file collects the data from the osbss database and converts it to JSON format.
 
 include 'includes/db.php';
 
