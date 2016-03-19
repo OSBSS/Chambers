@@ -20,7 +20,7 @@
 
 <body>
 <?php 
-include 'includes/db.php';  // Import configurations
+include 'includes/login.php';  // Import configurations
 if ($_POST['txtUsername'] != $username || $_POST['txtPassword'] != $password) { ?>
 
 <div style="text-align:center;">
@@ -35,8 +35,6 @@ if ($_POST['txtUsername'] != $username || $_POST['txtPassword'] != $password) { 
 </div>
 
 <?php } else { 
-include 'includes/db.php'; // Connect to DB
-include 'config.php';  // Import configurations
 ?> 
 
 <div id="data"></div>

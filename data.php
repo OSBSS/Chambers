@@ -5,7 +5,9 @@
 <div class="container">
 <!--div id="readings" style="margin: 0 auto;"-->
 <div class="row">
-<?php  
+<?php
+	include 'includes/db.php'; // Connect to DB
+	include 'config.php';  // Import configurations  
     // Start Loop
     for($x = 1; $x <= $chambers; $x++) {   			
 		// Generate a grid to display table and its data
