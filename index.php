@@ -7,6 +7,10 @@
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
 <link rel="shortcut icon" href="http://www.osbss.com/wp-content/uploads/2015/01/fav2.png"/>
+<?php 
+include 'includes/db.php'; // Connect to DB
+include 'config.php';  // Import configurations
+?>
 <!--  CSS -->
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" />
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap-theme.min.css" />
@@ -19,8 +23,9 @@
 </head>
 
 <body>
-<?php include 'includes/db.php';
+<?php 
 if ($_POST['txtUsername'] != $username || $_POST['txtPassword'] != $password) { ?>
+
 <div style="text-align:center;">
 <h1>OSBSS Login</h1> 
 <form name="form" method="post" action="<?php echo $_SERVER['PHP_SELF']; ?>"> 
@@ -31,6 +36,7 @@ if ($_POST['txtUsername'] != $username || $_POST['txtPassword'] != $password) { 
     <p><input type="submit" name="Submit" value="Login" /></p> 
 </form> 
 </div>
+
 <?php } else { ?> 
 
 <div id="data"></div>
