@@ -20,7 +20,7 @@
 
 <body>
 <?php 
-include 'config.php';  // Import configurations
+include 'includes/db.php';  // Import configurations
 if ($_POST['txtUsername'] != $username || $_POST['txtPassword'] != $password) { ?>
 
 <div style="text-align:center;">
