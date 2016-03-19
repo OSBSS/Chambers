@@ -17,7 +17,7 @@
 					mysql_query("ALTER TABLE node5 AUTO_INCREMENT = 1");
 					mysql_query("TRUNCATE TABLE node6;");
 					mysql_query("ALTER TABLE node6 AUTO_INCREMENT = 1");
-					header("Location: " . $_SERVER['REQUEST_URI']);
+					header("Location: http://data.osbss.com/chambers/index.php");
 					break;
 		}
 	}
