@@ -3,7 +3,7 @@
 // Sensors.php -  Retrieves data sent from the CC3000 and stores in the local database.
 
 include 'includes/db.php'; // connecting to database
-include 'includes/config.php'; // settings some configurations 
+include 'config.php'; // settings some configurations 
 
 /* 	NOTE: Store data according to chamber number in src query string
 * 	If src = chamber1, data will store in chamber1 table, and so on. 
