@@ -6,7 +6,7 @@ include 'includes/db.php'; // connecting to database
 include 'config.php'; // settings some configurations 
 
 /* 	NOTE: Store data according to chamber number in src query string
-* 	If src = chamber1, data will store in chamber1 table, and so on. 
+* 	If src = node1, data will store in node1 table, and so on. 
 */
  
 if ($_GET["temp"] || $_GET["co2"] || $_GET["rh"] || $_GET["lux"] || $_GET["stemp"] || $_GET["src"]) {
