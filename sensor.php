@@ -26,7 +26,7 @@ mysql_query($sql);
 echo "Success"; 
 }
 else 
-	echo "\nFailed";
+	echo "Failed";
 	
 //echo now(); // Testing timestamp format - debugging only
 ?>

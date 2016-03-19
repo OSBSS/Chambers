@@ -1,4 +1,6 @@
 <?php
+	include 'includes/db.php'; // Connect to DB
+	include 'config.php';  // Import configurations 
 	// Truncate tables action
 	if(isset($_GET['action'])) {
 		switch($_GET['action']) {
