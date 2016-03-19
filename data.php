@@ -1,5 +1,5 @@
 <h2 style="text-align:center">Chambers Sensor Readings</h2>
-<div style="text-align: center"><a href="truncate.php?action=truncate">Clear Database</a> | | Reloading in <span id="counter">15</span> second(s).</div>
+<div style="text-align: center"><a href="truncate.php?action=truncate">Clear Database</a> | Reloading in <span id="counter">15</span> second(s).</div>
 <!--p style="text-align:center; color: red;"><a href="index.php?action=truncate">Clear Database</a></p-->
 <p style="clear:both;"></p>
 <br />
