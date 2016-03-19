@@ -24,7 +24,7 @@ include 'includes/login.php';  // Import configurations
 if ($_POST['txtUsername'] != $username || $_POST['txtPassword'] != $password) { ?>
 
 <div style="text-align:center;">
-<h1>OSBSS Login</h1> 
+<h1>Chambers Project Login</h1> 
 <form name="form" method="post" action="<?php echo $_SERVER['PHP_SELF']; ?>"> 
     <p><label for="txtUsername">Username</label> 
     <br /><input type="text" title="Enter your username" name="txtUsername" /></p> 
