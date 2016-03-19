@@ -6,8 +6,7 @@
 <!--div id="readings" style="margin: 0 auto;"-->
 <div class="row">
 <?php
-    include 'includes/db.php'; // Connect to DB
-    include 'includes/config.php';  // Import required configurations
+    include 'config.php';  // Import required configurations
     
     // Start Loop
     for($x = 1; $x <= $chambers; $x++) {   			

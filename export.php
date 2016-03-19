@@ -3,7 +3,7 @@
 // Export.php - export table data as CSV format
 
 include 'includes/db.php'; // connecting to database
-include 'includes/config.php'; // settings some configurations 
+include 'config.php'; // settings some configurations 
 
 if ($_GET["table"]) {
     $table = $_GET["table"];

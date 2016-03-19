@@ -19,7 +19,24 @@
 </head>
 
 <body>
+<?php include 'includes/db.php';
+if ($_POST['txtUsername'] != $username || $_POST['txtPassword'] != $password) { ?>
+
+<h1>OSBSS Login</h1> 
+<form name="form" method="post" action="<?php echo $_SERVER['PHP_SELF']; ?>"> 
+    <p><label for="txtUsername">Username:</label> 
+    <br /><input type="text" title="Enter your username" name="txtUsername" /></p> 
+    <p><label for="txtpassword">Password:</label> 
+    <br /><input type="password" title="Enter your password" name="txtPassword" /></p> 
+    <p><input type="submit" name="Submit" value="Login" /></p> 
+</form> 
+
+<?php } else { ?> 
+
 <div id="data"></div>
+
+<?php } ?> 
+
 <!--
 <?php
 	// Truncate tables action
