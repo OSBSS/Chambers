@@ -10,7 +10,7 @@
 	include 'includes/db.php'; // Connect to DB
 	include 'config.php';  // Import configurations  
     // Start Loop
-    for($x = 1; $x <= $chambers; $x++) {   			
+    for($x = 1; $x <= $nodes; $x++) {   			
 		// Generate a grid to display table and its data
 		echo '<div class="col-md-4">';
 		echo '<h4 style="text-align:center; margin-bottom:-15px;">Node '. $x . '</h3>';
