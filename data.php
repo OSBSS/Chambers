@@ -25,7 +25,7 @@
         // Display data
         echo "<tbody><tr><td>" . $row['id'] . "</td><td> " . $row['timestamp'] . "</td><td> " . $row['temp'] . "&deg;C</td><td> " . $row['co2'] . " ppm</td><td> " . $row['rh'] . "%</td><td> " . $row['lux'] . " lux</td><td> " . $row['stemp'] . "&deg;C</td></tr></tbody>"; 
 		echo '</table>';
-		echo '<div style="text-align: center"><a href="export.php?table=chamber'.$x.'">Export</a></div>';
+		echo '<div style="text-align: center"><a href="export.php?table=node'.$x.'">Export</a></div>';
 		echo '</div>';
 	}
 	// End Loop
