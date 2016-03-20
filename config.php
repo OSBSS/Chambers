@@ -20,6 +20,4 @@ mysql_query($setTZ);
 $nodes = 6; 
 
 // Logs
-$file = 'log.txt';
-$current = file_get_contents($file);
 ?>
