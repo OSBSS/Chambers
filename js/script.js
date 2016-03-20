@@ -10,7 +10,7 @@ $(document).ready(function(){
 function auto_load() {
 	$('#data').load('data.php').fadeIn("slow");
 }
-setInterval(auto_load,15000); // refreshing after every 15 seconds
+setInterval(auto_load,5000); // refreshing after every 5 seconds
 
 // Reload counter
 
