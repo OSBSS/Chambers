@@ -8,7 +8,7 @@ $file = 'log.txt';
 // Open the file to get existing content
 $current = file_get_contents($file);
 $ts = date('Y-m-d H:i:s');
-$current .= "$ts - Received Data\n";
+$current .= "$ts - Receving...\n";
 
 /* 	NOTE: Store data according to chamber number in src query string
 * 	If src = node1, data will store in node1 table, and so on. 
@@ -23,6 +23,8 @@ if ($_GET["temp"] || $_GET["co2"] || $_GET["rh"] || $_GET["lux"] || $_GET["stemp
     $stemp  = $_GET["stemp"];
     $src = $_GET["src"];
     
+$current .= "$ts - Received Data\n";
+
 // SQL command to insert into database
 $sql = "insert into $src (timestamp, temp, rh, lux, stemp, co2) values (now(), $temp, $rh, $lux, $stemp, $co2)";
 mysql_query($sql);
@@ -33,7 +35,9 @@ file_put_contents($file, $current);
 
 // TO-DO: Need to figure a way out to send acknowledgement back to sender. 
 echo "1"; 
+$current .= "$ts - Data Inserted\n";
 }
 else 
 	echo "0";
+	$current .= "$ts - Insert Failed\n";
 ?>
