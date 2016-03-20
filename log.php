@@ -11,7 +11,7 @@ $(document).ready(function(){
 function auto_load() {
 	$('#logs').load('log.txt').fadeIn("slow");
 }
-setInterval(auto_load,1000); // refreshing after every 15 seconds
+setInterval(auto_load,500); // refreshing after every 500 ms
 </script>
 </head>
 <body>
