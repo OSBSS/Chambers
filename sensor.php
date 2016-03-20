@@ -22,6 +22,14 @@ if ($_GET["temp"] || $_GET["co2"] || $_GET["rh"] || $_GET["lux"] || $_GET["stemp
 $sql = "insert into $src (timestamp, temp, rh, lux, stemp, co2) values (now(), $temp, $rh, $lux, $stemp, $co2)";
 mysql_query($sql);
 
+$file = 'log.txt';
+// Open the file to get existing content
+$current = file_get_contents($file);
+// Append a new person to the file
+$current .= "$sql\n";
+// Write the contents back to the file
+file_put_contents($file, $current);
+
 // TO-DO: Need to figure a way out to send acknowledgement back to sender. 
 echo "1"; 
 }
