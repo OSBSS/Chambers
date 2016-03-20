@@ -5,18 +5,18 @@
 <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
 <script>
 $(document).ready(function(){
- 	auto_load(); //Call auto_load() function when DOM is Read
+ 	load(); //Call auto_load() function when DOM is Read
 });
 // AJAX reload
-function auto_load() {
-	$('#logs').load('log.txt').fadeIn("slow");
+function load() {
+	$('#log').load('log.txt').fadeIn("slow");
 }
-setInterval(auto_load,1000);
+setInterval(load,1500);
 </script>
 </head>
 <body>
 <a href="truncate.php?action=clear">Clear</a>
 <br />
-<div id="logs"></div>
+<div id="log"></div>
 </body>
 </html>
