@@ -21,12 +21,12 @@ if ($_GET["temp"] || $_GET["co2"] || $_GET["rh"] || $_GET["lux"] || $_GET["stemp
 // SQL command to insert into database
 $sql = "insert into $src (timestamp, temp, rh, lux, stemp, co2) values (now(), $temp, $rh, $lux, $stemp, $co2)";
 mysql_query($sql);
-
+$ts = now();
 $file = 'log.txt';
 // Open the file to get existing content
 $current = file_get_contents($file);
 // Append a new person to the file
-$current .= "$sql\n";
+$current .= "$ts - $sql\n";
 // Write the contents back to the file
 file_put_contents($file, $current);
 
