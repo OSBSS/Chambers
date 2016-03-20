@@ -5,9 +5,13 @@
 <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
 <script>
 $(document).ready(function(){
-	$("#log").load("includes/datalogs.php").fadeIn("slow");
-	setInterval(auto_load,2000); // refreshing after every 1 second
+ 	auto_load(); //Call auto_load() function when DOM is Read
 });
+// AJAX reload
+function auto_load() {
+	$('#log').load('includes/datalogs.php').fadeIn("slow");
+}
+setInterval(auto_load,1000); // refreshing after every 15 seconds
 </script>
 </head>
 <body>
