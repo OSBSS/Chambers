@@ -2,6 +2,7 @@
 <html>
 <head>
 <title>Chambers Project - Logs</title>
+<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
 <script>
 $(document).ready(function(){
 	$("#log").load("includes/datalogs.php").fadeIn("slow");
