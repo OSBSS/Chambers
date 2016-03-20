@@ -9,7 +9,7 @@ $(document).ready(function(){
 });
 // AJAX reload
 function auto_load() {
-	$('#log').load('includes/datalogs.php').fadeIn("slow");
+	$('#log').load('datalogs.php').fadeIn("slow");
 }
 setInterval(auto_load,1000); // refreshing after every 15 seconds
 </script>
