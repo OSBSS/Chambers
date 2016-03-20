@@ -3,6 +3,9 @@
 <head>
 <title>Chambers Project - Logs</title>
 <script>
+$(document).ready(function(){
+ 	auto_load(); //Call auto_load() function when DOM is Read
+});
 function auto_load() {
 	$('#log').load('includes/datalogs.php').fadeIn("slow");
 }
