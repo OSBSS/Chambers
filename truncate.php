@@ -24,7 +24,6 @@
 					header("Location: log.php");
 					//echo "Log cleared!";
 					break;
-			
 		}
 	}
 ?>

@@ -13,7 +13,6 @@ function auto_load() {
 }
 setInterval(auto_load,15000); // refreshing after every 15 seconds
 
-
 // Reload counter
 
 function countdown() {
