@@ -9,9 +9,9 @@ $(document).ready(function(){
 });
 // AJAX reload
 function auto_load() {
-	$('#logs').load('log.txt').fadeIn("slow");
+	$('#logs').load('log.txt');
 }
-setInterval(auto_load,500); // refreshing after every 500 ms
+setInterval(auto_load,1000);
 </script>
 </head>
 <body>

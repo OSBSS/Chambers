@@ -16,7 +16,7 @@ $file = 'log.txt';
 $current = file_get_contents($file);
 
 $ts = date('Y-m-d H:i:s');
-$current .= "$ts - Receiving data for $src<br>";
+$current .= "$ts - Receiving data from $src<br>";
 
 include 'includes/db.php'; // connecting to database
 include 'config.php'; // settings some configurations 
