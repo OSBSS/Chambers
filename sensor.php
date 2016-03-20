@@ -4,9 +4,7 @@
 
 include 'includes/db.php'; // connecting to database
 include 'config.php'; // settings some configurations 
-$file = 'log.txt';
-// Open the file to get existing content
-$current = file_get_contents($file);
+
 $ts = date('Y-m-d H:i:s');
 $current .= "$ts - Receving...\n";
 
@@ -22,22 +20,22 @@ if ($_GET["temp"] || $_GET["co2"] || $_GET["rh"] || $_GET["lux"] || $_GET["stemp
     $lux  = $_GET["lux"];
     $stemp  = $_GET["stemp"];
     $src = $_GET["src"];
+}
     
-$current .= "$ts - Received Data\n";
+$current .= "$ts - Data Received\n";
 
 // SQL command to insert into database
 $sql = "insert into $src (timestamp, temp, rh, lux, stemp, co2) values (now(), $temp, $rh, $lux, $stemp, $co2)";
-mysql_query($sql);
 
-$current .= "$ts - $sql\n";
-// Write the contents back to the file
-file_put_contents($file, $current);
-
-// TO-DO: Need to figure a way out to send acknowledgement back to sender. 
-echo "1"; 
-$current .= "$ts - Data Inserted\n";
+if(mysql_query($sql)) {
+	$current .= "$ts - $sql\n";
+	// Write the contents back to the file
+	file_put_contents($file, $current);
+	echo "1"; 
+	$current .= "$ts - Upload Successful\n";
 }
-else 
+else {
 	echo "0";
 	$current .= "$ts - Insert Failed\n";
+}
 ?>

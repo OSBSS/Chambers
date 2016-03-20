@@ -18,4 +18,8 @@ mysql_query($setTZ);
 // Setting to specify total number of chambers. This MUST be exact as in the database otherwise ERRRRROR.
 // To-Do: Automatically figure out if table exists or not. No nee for now.
 $nodes = 6; 
+
+// Logs
+$file = 'log.txt';
+$current = file_get_contents($file);
 ?>
