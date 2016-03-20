@@ -9,7 +9,7 @@ $file = 'log.txt';
 $current = file_get_contents($file);
 
 $ts = date('Y-m-d H:i:s');
-$current .= "$ts - Receving...<br>";
+$current .= "$ts - Receving Data<br>";
 
 /* 	NOTE: Store data according to chamber number in src query string
 * 	If src = node1, data will storein node1 table, and so on. 
@@ -34,11 +34,11 @@ if(mysql_query($sql)) {
 	$current .= "$ts - $sql<br>";
 	// Write the contents back to the file
 	echo "1"; 
-	$current .= "$ts - Upload Successful<br>";
+	$current .= "$ts - Data Uploaded<br>";
 }
 else {
 	echo "0";
-	$current .= "$ts - Insert Failed\n";
+	$current .= "$ts - Failed<br>";
 }
 file_put_contents($file, $current);
 ?>
