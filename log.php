@@ -4,9 +4,9 @@
 <title>Chambers Project - Logs</title>
 <script>
 $(document).ready(function(){
-	$("#log").load("includes/datalogs.php").fadeIn("slow");});
+	$("#log").load("includes/datalogs.php").fadeIn("slow");
 	setInterval(auto_load,2000); // refreshing after every 1 second
-}
+});
 </script>
 </head>
 <body>
