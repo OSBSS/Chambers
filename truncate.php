@@ -21,7 +21,7 @@
 					break;
 			case 'clear':
 					file_put_contents("log.txt", "");
-					header("Location: log.php");
+					header("Location: http://data.osbss.com/chambers/log.php");
 					//echo "Log cleared!";
 					break;
 		}
