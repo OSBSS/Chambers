@@ -4,11 +4,12 @@
 
 include 'includes/db.php'; // connecting to database
 include 'config.php'; // settings some configurations 
+
 $file = 'log.txt';
 $current = file_get_contents($file);
 
 $ts = date('Y-m-d H:i:s');
-$current .= "$ts - Receving...<br />";
+$current .= "$ts - Receving...\n";
 
 /* 	NOTE: Store data according to chamber number in src query string
 * 	If src = node1, data will store in node1 table, and so on. 
@@ -24,7 +25,7 @@ if ($_GET["temp"] || $_GET["co2"] || $_GET["rh"] || $_GET["lux"] || $_GET["stemp
     $src = $_GET["src"];
 }
     
-$current .= "$ts - Data Received<br />";
+$current .= "$ts - Data Received\n";
 
 // SQL command to insert into database
 $sql = "insert into $src (timestamp, temp, rh, lux, stemp, co2) values (now(), $temp, $rh, $lux, $stemp, $co2)";
@@ -34,10 +35,10 @@ if(mysql_query($sql)) {
 	// Write the contents back to the file
 	file_put_contents($file, $current);
 	echo "1"; 
-	$current .= "$ts - Upload Successful<br />";
+	$current .= "$ts - Upload Successful\n";
 }
 else {
 	echo "0";
-	$current .= "$ts - Insert Failed<br />";
+	$current .= "$ts - Insert Failed\n";
 }
 ?>
