@@ -4,7 +4,6 @@
 <p style="clear:both;"></p>
 <br />
 <div class="container">
-<!--div id="readings" style="margin: 0 auto;"-->
 <div class="row">
 <?php
 	include 'includes/db.php'; // Connect to DB
@@ -32,5 +31,4 @@
 	// End Loop
 ?>
 </div>
-<!--/div-->
 </div>
