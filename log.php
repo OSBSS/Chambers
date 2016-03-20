@@ -11,7 +11,7 @@ $(document).ready(function(){
 function load() {
 	$('#log').load('log.txt').fadeIn("slow");
 }
-setInterval(load,1500);
+setInterval(load,300);
 </script>
 </head>
 <body>
