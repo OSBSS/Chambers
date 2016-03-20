@@ -23,10 +23,8 @@ $sql = "insert into $src (timestamp, temp, rh, lux, stemp, co2) values (now(), $
 mysql_query($sql);
 
 // TO-DO: Need to figure a way out to send acknowledgement back to sender. 
-echo "Success"; 
+echo "1"; 
 }
 else 
-	echo "Failed";
-	
-//echo now(); // Testing timestamp format - debugging only
+	echo "0";
 ?>
