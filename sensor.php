@@ -4,11 +4,16 @@
 
 include 'includes/db.php'; // connecting to database
 include 'config.php'; // settings some configurations 
+$file = 'log.txt';
+// Open the file to get existing content
+$current = file_get_contents($file);
+$ts = date('Y-m-d H:i:s');
+$current .= "$ts - Received Data\n";
 
 /* 	NOTE: Store data according to chamber number in src query string
 * 	If src = node1, data will store in node1 table, and so on. 
 */
- 
+
 if ($_GET["temp"] || $_GET["co2"] || $_GET["rh"] || $_GET["lux"] || $_GET["stemp"] || $_GET["src"]) {
 // Get values from URL and store into its own variable
     $temp = $_GET["temp"];
@@ -22,12 +27,6 @@ if ($_GET["temp"] || $_GET["co2"] || $_GET["rh"] || $_GET["lux"] || $_GET["stemp
 $sql = "insert into $src (timestamp, temp, rh, lux, stemp, co2) values (now(), $temp, $rh, $lux, $stemp, $co2)";
 mysql_query($sql);
 
-$ts = date('Y-m-d H:i:s');
-
-$file = 'log.txt';
-// Open the file to get existing content
-$current = file_get_contents($file);
-// Append a new person to the file
 $current .= "$ts - $sql\n";
 // Write the contents back to the file
 file_put_contents($file, $current);
