@@ -21,7 +21,9 @@ if ($_GET["temp"] || $_GET["co2"] || $_GET["rh"] || $_GET["lux"] || $_GET["stemp
 // SQL command to insert into database
 $sql = "insert into $src (timestamp, temp, rh, lux, stemp, co2) values (now(), $temp, $rh, $lux, $stemp, $co2)";
 mysql_query($sql);
-$ts = now();
+
+$ts = date('Y-m-d H:i:s');
+
 $file = 'log.txt';
 // Open the file to get existing content
 $current = file_get_contents($file);
