@@ -6,7 +6,6 @@ $(document).ready(function(){
  	countdown();
 });
 
-
 // AJAX reload
 function auto_load() {
 	$('#data').load('data.php').fadeIn("slow");
