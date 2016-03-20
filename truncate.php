@@ -19,6 +19,12 @@
 					mysql_query("ALTER TABLE node6 AUTO_INCREMENT = 1");
 					header("Location: http://data.osbss.com/chambers/index.php");
 					break;
+			case 'clear':
+					file_put_contents("log.txt", "");
+					header("Location: log.php");
+					//echo "Log cleared!";
+					break;
+			
 		}
 	}
 ?>

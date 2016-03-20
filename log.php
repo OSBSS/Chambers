@@ -3,25 +3,14 @@
 <head>
 <title>Chambers Project - Logs</title>
 </head>
-
 <body>
-<a href="log.php?action=clear">Clear</a>
+<a href="truncate.php?action=clear">Clear</a>
 <br />
 <?php
     $myfilename = "log.txt";
     if(file_exists($myfilename)){
       echo file_get_contents($myfilename);
     }
-    
-    if(isset($_GET['action'])) {
-		switch($_GET['action']) {
-			case 'clear':
-					file_put_contents("log.txt", "");
-					header("Location: log.php");
-					echo "Log cleared!";
-					break;
-		}
-	}
 ?>
 </body>
 </html>
