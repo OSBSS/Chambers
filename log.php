@@ -9,7 +9,7 @@ $(document).ready(function(){
 });
 // AJAX reload
 function auto_load() {
-	$('#log').load('datalogs.php').fadeIn("slow");
+	$('#logs').load('log.txt').fadeIn("slow");
 }
 setInterval(auto_load,1000); // refreshing after every 15 seconds
 </script>
@@ -17,6 +17,6 @@ setInterval(auto_load,1000); // refreshing after every 15 seconds
 <body>
 <a href="truncate.php?action=clear">Clear</a>
 <br />
-<div id="log"></div>
+<div id="logs"></div>
 </body>
 </html>
