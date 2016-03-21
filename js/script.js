@@ -12,7 +12,7 @@ function countdown() {
         setInterval(function () {
             if (countDown == 0) {
                 countDown=5;
-                return;
+                //return;
             }
             countDown--;
             document.getElementById('counter').innerHTML = countDown;
