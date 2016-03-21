@@ -2,8 +2,9 @@
 
 // Initializing ... 
 $(document).ready(function(){
- 	auto_load(); //Call auto_load() function when DOM is Read
- 	countdown();
+ 	//countdown();
+ 	//auto_load(); //Call auto_load() function when DOM is Read
+ 	
  	
  	
 // Reload counter
