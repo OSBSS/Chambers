@@ -1,16 +1,17 @@
 // OSBSS Copyright 2016
 
-/* Initializing ... 
+//Initializing ... 
 $(document).ready(function(){	
  	auto_load(); //Call auto_load() function when DOM is Read
  	countdown();
 }); 	
-*/
+
 var countDown=5;
 
 function countdown() {
         setInterval(function () {
             if (countDown == 0) {
+                countDown=5;
                 return;
             }
             countDown--;
@@ -19,7 +20,7 @@ function countdown() {
         }, 1000);
     }
 
-countdown();
+//countdown();
  	
  	
 // AJAX reload
