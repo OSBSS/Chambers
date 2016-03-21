@@ -1,17 +1,25 @@
 // OSBSS Copyright 2016
 
-// Initializing ... 
+/* Initializing ... 
 $(document).ready(function(){	
- 	//auto_load(); //Call auto_load() function when DOM is Read
+ 	auto_load(); //Call auto_load() function when DOM is Read
  	countdown();
 }); 	
+*/
+var countDown=5;
 
-function countdown(remaining) {
-    if(remaining === 0)
-        auto_load();
-    document.getElementById('counter').innerHTML = remaining;
-    setTimeout(function(){ countdown(remaining - 1); }, 1000);
-}(5); 	
+function countdown() {
+        setInterval(function () {
+            if (countDown == 0) {
+                return;
+            }
+            countDown--;
+            document.getElementById('counter').innerHTML = countDown;
+            return countDown;
+        }, 1000);
+    }
+
+countdown();
  	
  	
 // AJAX reload
