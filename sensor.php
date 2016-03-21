@@ -26,7 +26,7 @@ $sql = "insert into $src (timestamp, temp, rh, lux, stemp, co2) values (now(), $
 
 // Check if query was successful
 if(mysql_query($sql)) {
-	$current .= "$ts - Temp: $temp, RH: $rh, Lux: $lux, STemp: $step, CO2: $co2<br>";
+	$current .= "$ts - Temp: $temp, RH: $rh, Lux: $lux, STemp: $stemp, CO2: $co2<br>";
 	echo "Success"; 
 	$current .= "$ts - Success<br>";
 }
