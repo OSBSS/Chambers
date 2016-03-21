@@ -6,12 +6,12 @@ $(document).ready(function(){
  	countdown();
 }); 	
 
-var countDown=5;
+var countDown=6;
 function countdown() {
         setInterval(function () {
-            if (countDown == 0) {
+            if (countDown == 1) {
                 $('#data').load('data.php').fadeIn("slow");
-                countDown=5;
+                countDown=6;
             }
             countDown--;
             document.getElementById('counter').innerHTML = countDown;
