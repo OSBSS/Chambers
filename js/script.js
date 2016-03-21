@@ -2,11 +2,16 @@
 
 // Initializing ... 
 $(document).ready(function(){
- 	//countdown();
- 	//auto_load(); //Call auto_load() function when DOM is Read
  	
+ 	auto_load(); //Call auto_load() function when DOM is Read
+ 	countdown();
  	
- 	
+// AJAX reload
+function auto_load() {
+	$('#data').load('data.php').fadeIn("slow");
+}
+setInterval(auto_load,5000); // refreshing after every 5 seconds
+
 // Reload counter
 function countdown() {
 	var i = document.getElementById('counter');
@@ -14,14 +19,6 @@ function countdown() {
 }
 setInterval(countdown,1000);
 
-// AJAX reload
-function auto_load() {
-	$('#data').load('data.php').fadeIn("slow");
-}
-setInterval(auto_load,5000); // refreshing after every 5 seconds
 });
-
-
-
 
 
