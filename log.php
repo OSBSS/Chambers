@@ -9,7 +9,7 @@ $(document).ready(function(){
 });
 // AJAX reload
 function load() {
-	$('#log').load('log.txt').fadeIn("slow");
+	$('#log').load('log.txt');
 }
 setInterval(load,1000);
 </script>
