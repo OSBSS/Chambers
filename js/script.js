@@ -1,7 +1,8 @@
 // OSBSS Copyright 2016
 
 //Initializing ... 
-$(document).ready(function(){	
+$(document).ready(function(){
+	$('#data').load('data.php');	
  	countdown();
 }); 	
 
@@ -17,4 +18,3 @@ function countdown() {
             return countDown;
         }, 1000);
 }
-
