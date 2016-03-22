@@ -6,21 +6,29 @@
 <script>
 $(document).ready(function(){
  	load(); //Call auto_load() function when DOM is Read
- 	var objDiv = document.getElementById("log");
-	objDiv.scrollTop = objDiv.scrollHeight;
 });
 // AJAX reload
 function load() {
 	$('#log').load('log.txt');
+	var objDiv = document.getElementById("log");
+	objDiv.scrollTop = objDiv.scrollHeight;
 }
 setInterval(load,1000);
-
-
 </script>
+<style>
+#top {
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 999;
+  width: 100%;
+  height: 23px;
+}
+</style>
 </head>
 <body>
-<a href="truncate.php?action=clear">Clear</a>
+<div id="top"><a href="truncate.php?action=clear">Clear</a></div>
 <br />
-<div id="log" style="height: 800px; overflow: scroll;"></div>
+<div id="log" style="height: 600px;"></div>
 </body>
 </html>
