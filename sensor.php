@@ -27,12 +27,12 @@ $sql = "insert into $src (timestamp, temp, rh, lux, stemp, co2) values (now(), $
 // Check if query was successful
 if(mysql_query($sql)) {
 	echo "Success"; 
-	$current .= "$ts - Temp: $temp, RH: $rh, Lux: $lux, STemp: $stemp, CO2: $co2 - Source: $src<br>";
-	$current .= "$ts - Success<br>";
+	$current .= "$ts - Temp: $temp, RH: $rh, Lux: $lux, sTemp: $stemp, CO2: $co2 - Source: $src - Success<br>";
+	//$current .= "$ts - Success<br>";
 }
 else {
 	echo "Failed";
-	$current .= "$ts - Failed<br>";
+	$current .= "$ts - Source: $src - Failed<br>";
 }
 file_put_contents($file, $current); // Write Log to File
 ?>
