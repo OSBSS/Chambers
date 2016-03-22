@@ -10,8 +10,6 @@ $(document).ready(function(){
 // AJAX reload
 function load() {
 	$('#log').load('log.txt');
-	var objDiv = document.getElementById("log");
-	objDiv.scrollTop = objDiv.scrollHeight;
 }
 setInterval(load,1000);
 </script>
@@ -23,12 +21,13 @@ setInterval(load,1000);
   z-index: 999;
   width: 100%;
   height: 23px;
+  background-color: #FFF;
 }
 </style>
 </head>
 <body>
 <div id="top"><a href="truncate.php?action=clear">Clear</a></div>
 <br />
-<div id="log" style="height: 600px;"></div>
+<div id="log" style="max-height: 300px; overflow: hidden;"></div>
 </body>
 </html>
