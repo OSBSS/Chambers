@@ -6,13 +6,19 @@
 <script>
 $(document).ready(function(){
  	load(); //Call auto_load() function when DOM is Read
- 	$('html, body').animate({scrollTop:$(document).height()}, 1000);
+ 	updateScroll();
 });
 // AJAX reload
 function load() {
 	$('#log').load('log.txt');
 }
 setInterval(load,1000);
+
+function updateScroll(){
+    var element = document.getElementById("log");
+    element.scrollTop = element.scrollHeight;
+}
+setInterval("updateScroll",1000);
 </script>
 <style>
 #top {
