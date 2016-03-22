@@ -6,10 +6,8 @@
 <script>
 $(document).ready(function(){
  	load(); //Call auto_load() function when DOM is Read
- 	window.setInterval(function() {
- 		var elem = document.getElementById('log');
-  		elem.scrollTop = elem.scrollHeight;
-	}, 1000);
+ 	var objDiv = document.getElementById("log");
+	objDiv.scrollTop = objDiv.scrollHeight;
 });
 // AJAX reload
 function load() {
@@ -23,6 +21,6 @@ setInterval(load,1000);
 <body>
 <a href="truncate.php?action=clear">Clear</a>
 <br />
-<div id="log"></div>
+<div id="log" style="height: 800px; overflow: scroll;"></div>
 </body>
 </html>
