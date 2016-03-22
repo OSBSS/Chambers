@@ -12,6 +12,11 @@ function load() {
 	$('#log').load('log.txt');
 }
 setInterval(load,1000);
+
+window.setInterval(function() {
+  var elem = document.getElementById('log');
+  elem.scrollTop = elem.scrollHeight;
+}, 1000);
 </script>
 </head>
 <body>
