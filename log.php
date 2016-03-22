@@ -6,6 +6,7 @@
 <script>
 $(document).ready(function(){
  	load(); //Call auto_load() function when DOM is Read
+ 	$('html, body').animate({scrollTop:$(document).height()}, 1000);
 });
 // AJAX reload
 function load() {
@@ -20,14 +21,15 @@ setInterval(load,1000);
   left: 0;
   z-index: 999;
   width: 100%;
-  height: 23px;
+  height: 30px;
   background-color: #FFF;
+  margin: 10px 10px:
 }
 </style>
 </head>
 <body>
 <div id="top"><a href="truncate.php?action=clear">Clear</a></div>
 <br />
-<div id="log" style="max-height: 300px; overflow: hidden;"></div>
+<div id="log"></div>
 </body>
 </html>
