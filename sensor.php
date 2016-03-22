@@ -28,7 +28,9 @@ $sql = "insert into $src (timestamp, temp, rh, lux, stemp, co2) values (now(), $
 if(mysql_query($sql)) {
 	echo "Success"; 
 	$current .= "$ts - Temp: $temp, RH: $rh, Lux: $lux, sTemp: $stemp, CO2: $co2 - Source: $src - Success<br>";
-	//$current .= "$ts - Success<br>";
+	if($src=="node5") {
+		$current .= "<br>";
+	}	
 }
 else {
 	echo "Failed";
