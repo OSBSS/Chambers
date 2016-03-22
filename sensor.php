@@ -16,7 +16,7 @@ $file = 'log.txt';
 $current = file_get_contents($file);
 
 $ts = date('Y-m-d H:i:s');
-$current .= "$ts - Source: $src<br>";
+//$current .= "$ts - Source: $src<br>";
 
 include 'includes/db.php'; // connecting to database
 include 'config.php'; // settings some configurations 
@@ -26,13 +26,13 @@ $sql = "insert into $src (timestamp, temp, rh, lux, stemp, co2) values (now(), $
 
 // Check if query was successful
 if(mysql_query($sql)) {
-	$current .= "$ts - Temp: $temp, RH: $rh, Lux: $lux, STemp: $stemp, CO2: $co2<br>";
 	echo "Success"; 
+	$current .= "$ts - Temp: $temp, RH: $rh, Lux: $lux, STemp: $stemp, CO2: $co2 - Source: $src<br>";
 	$current .= "$ts - Success<br>";
 }
 else {
 	echo "Failed";
 	$current .= "$ts - Failed<br>";
 }
-file_put_contents($file, $current);
+file_put_contents($file, $current); // Write Log to File
 ?>
