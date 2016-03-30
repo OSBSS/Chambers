@@ -15,7 +15,7 @@ $(document).ready(function() {
 		if(name.length>0) {
 			$.ajax({
 				type: "POST",
-				url: "table_edit.php",
+				url: "includes/table_edit.php",
 				data: dataString,
 				cache: false,
 				success: function(html) {
