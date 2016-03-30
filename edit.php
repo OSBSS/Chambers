@@ -12,7 +12,7 @@ $(document).ready(function() {
 		var name=$("#name_input_"+ID).val();
 		var dataString = 'id='+ ID +'&name='+name;
 		$("#name_"+ID).html('<img src="load.gif" />'); // Loading image
-		if(name.length>0&& last.length>0) {
+		if(name.length>0) {
 			$.ajax({
 				type: "POST",
 				url: "table_edit.php",
