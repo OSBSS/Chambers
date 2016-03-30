@@ -57,8 +57,8 @@ td
 .editbox
 {
 	font-size:14px;
-	width:270px;
-	background-color:#ffffcc;
+	width:100px;
+	background-color:#ffffff;
 	border:solid 1px #000;
 	padding:4px;
 }
