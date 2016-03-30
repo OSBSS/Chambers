@@ -84,7 +84,7 @@ td
 <tr id="<?php echo $id; ?>" class="edit_tr">
 
 <td class="edit_td">
-<?php echo $id; ?> | <span id="node_<?php echo $id; ?>" class="text"><?php echo $name; ?></span>
+<?php echo $id; ?>  -  <span id="node_<?php echo $id; ?>" class="text"><?php echo $name; ?></span>
 <input type="text" value="<?php echo $name; ?>" class="editbox" id="name_input_<?php echo $id; ?>" />
 </td>
 
