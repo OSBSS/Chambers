@@ -11,8 +11,11 @@
     // Start Loop
     for($x = 1; $x <= $nodes; $x++) {   			
 		// Generate a grid to display table and its data
+		$sql = "SELECT name FROM nodes where id = $x";
+		$result = mysql_query($sql) or die(mysql_error());
+		$row = mysql_fetch_array($result);
 		echo '<div class="col-md-4">';
-		echo '<h4 style="text-align:center; margin-bottom:-15px;">Node '. $x . '</h3>';
+		echo '<h4 style="text-align:center; margin-bottom:-15px;">'. $row['name'] . '</h3>';
 		echo '<br />';
 
 		echo '<table cellpadding="0" cellspacing="0" class="db-table">';
