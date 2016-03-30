@@ -71,7 +71,7 @@ td
 </head>
 
 <body>
-<h3>Click on the node name to edit. Hit enter when done</h3>
+<h3>Click on the node name to edit. Hit enter when done.</h3>
 <table>
 <?php
 	include 'includes/db.php'; // Connect to DB
