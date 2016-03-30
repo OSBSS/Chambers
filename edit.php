@@ -83,11 +83,6 @@ td
 <tr id="<?php echo $id; ?>" class="edit_tr">
 
 <td class="edit_td">
-<span id="node_<?php echo $id; ?>" class="text"><?php echo $id; ?></span>
-<input type="text" value="<?php echo $id; ?>" class="editbox" />
-</td>
-
-<td class="edit_td">
 <span id="node_<?php echo $id; ?>" class="text"><?php echo $name; ?></span>
 <input type="text" value="<?php echo $name; ?>" class="editbox" id="name_input_<?php echo $id; ?>" />
 </td>
