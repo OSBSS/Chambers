@@ -64,8 +64,8 @@ td
 }
 .edit_tr:hover
 {
-	background: #80C8E5;
-	cursor:pointer;
+	background: #e2e2e2;
+	cursor: pointer;
 }
 </style>
 </head>
@@ -81,6 +81,11 @@ td
 		$name = $row['name'];
 ?>
 <tr id="<?php echo $id; ?>" class="edit_tr">
+
+<td class="edit_td">
+<span id="node_<?php echo $id; ?>" class="text"><?php echo $id; ?></span>
+<input type="text" value="<?php echo $id; ?>" class="editbox" ?>" />
+</td>
 
 <td class="edit_td">
 <span id="node_<?php echo $id; ?>" class="text"><?php echo $name; ?></span>
